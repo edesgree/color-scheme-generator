@@ -9,12 +9,12 @@ $grey:#E5E5E5;
   color: rgba(255, 255, 255, 0.87);
 
   color-scheme: light dark;
-  font-family: 'Montserrat', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   font-synthesis: none;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -32,11 +32,11 @@ a {
 
 
 body {
+  align-items: flex-start;
   display: flex;
   margin: 0;
   min-height: 100vh;
   min-width: 320px;
-  place-items: center;
 }
 
 h1 {
@@ -53,17 +53,23 @@ h1 {
 
 
 main{
-  #formSelection{
+  #colorSchemeForm{
     align-items: center;
     background-color: $blue-dark;
     display: flex;
+    gap: 20px;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px;
+    input,select,button{
+      padding:15px;
+    }
     #colorPicker{
       background-color:$grey;
+      height: 48px;
+      padding: 0;
+      width: 60px;
     }
     #selectType{
-      padding:3px 6px;
     }
     button{
       background:$blue-normal;
@@ -80,12 +86,16 @@ main{
     li{
       display: flex;
       flex-direction: column;
-      .color{
-        height:200px;
+      .color-swatch:hover{
+       cursor: pointer;
+        img{
+
+        }
       }
-      .legend{
+      .color-legend{
         background-color: $blue-dark;
         color:white;
+        flex:1;
         padding:20px 10px;
         text-align: center;
       }

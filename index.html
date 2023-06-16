@@ -12,35 +12,12 @@
         <h1>Color Scheme Generator</h1>
       </header>
       <main>
-        <form id="formSelection">
+        <form id="colorSchemeForm">
           <input type="color" name="colorPicker" id="colorPicker" />
-          <select name="selectType" id="selectType">
-            <option value="toto">toto</option>
-          </select>
-          <button>Get color scheme</button>
+          <select name="selectType" id="selectType"></select>
+          <input type="submit" value="Get color scheme" />
         </form>
-        <ul class="color-list" id="colorScheme">
-          <li>
-            <span class="color" style="background-color: #33cc44"></span>
-            <span class="legend">#33cc44</span>
-          </li>
-          <li>
-            <span class="color" style="background-color: #aa3322"></span>
-            <span class="legend">#aa3322</span>
-          </li>
-          <li>
-            <span class="color" style="background-color: #bbcc33"></span>
-            <span class="legend">#bbcc33</span>
-          </li>
-          <li>
-            <span class="color" style="background-color: #ff00bb"></span>
-            <span class="legend">#ff00bb</span>
-          </li>
-          <li>
-            <span class="color" style="background-color: #ff4444"></span>
-            <span class="legend">#ff4444</span>
-          </li>
-        </ul>
+        <ul class="color-list" id="colorScheme"></ul>
       </main>
     </div>
     <script type="module" src="/src/js/main.js"></script>
