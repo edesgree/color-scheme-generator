@@ -26,8 +26,6 @@ colorSchemeModes.forEach((mode) => {
 
 colorSchemeForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log('colorSchemePicker', colorSchemePicker.value);
-  console.log('colorSchemeSelect', colorSchemeSelect.value);
   const colorHexa = colorSchemePicker.value.slice(1);
   const url = `https://www.thecolorapi.com/scheme?hex=${colorHexa}&mode=${colorSchemeSelect.value}&count=${colorSchemeNb}`;
 
@@ -40,7 +38,7 @@ colorSchemeForm.addEventListener('submit', (event) => {
     .then((response) => response.json())
     .then((data) => {
       const colors = data.colors;
-      console.log(data);
+
       generateSwatches(colors);
     })
     .catch((error) => console.log(error));
