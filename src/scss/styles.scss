@@ -86,10 +86,26 @@ main{
     li{
       display: flex;
       flex-direction: column;
-      .color-swatch:hover{
-       cursor: pointer;
-        img{
-
+      
+      
+      .color-swatch{
+        position: relative;
+        &:hover{
+          cursor: pointer;
+         
+        }
+        .color-copy-label{
+          bottom: 5px;
+          color: yellowgreen;
+          left: 0;
+          opacity:0;
+          position: absolute;
+          transition:.5s ease-in all;
+          width: 100%;
+          z-index: 1;
+          &.active{
+            opacity:1;
+          }
         }
       }
       .color-legend{

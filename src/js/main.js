@@ -54,19 +54,26 @@ const generateSwatches = (colors) => {
     colorItem.classList.add('color-item');
     colorItem.innerHTML = `
     <div class="color-swatch" style="background-color: ${color.hex.value}">
-    <img src="${color.image.named}" alt="${color.name.value}" />
+      <img src="${color.image.named}" alt="${color.name.value}" />
+      <span class="color-copy-label">Copied!</span>
     </div>
+    
     <div class="color-legend">
       ${color.hex.value}
     </div>
   `;
     // Add click event listener to the image to copy the color
     const imageElement = colorItem.querySelector('img');
+    const colorCopyLabel = colorItem.querySelector('.color-copy-label');
     imageElement.addEventListener('click', function (event) {
       event.preventDefault();
 
       // Copy the text inside the text field
       navigator.clipboard.writeText(color.hex.value);
+      colorCopyLabel.classList.add('active');
+      setTimeout(function () {
+        colorCopyLabel.classList.remove('active');
+      }, 1000);
     });
     colorList.appendChild(colorItem);
   });
