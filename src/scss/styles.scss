@@ -89,20 +89,32 @@ main{
       
       
       .color-swatch{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        justify-content: center;
+        place-items: center;
         position: relative;
         &:hover{
+         box-shadow:  inset 0px 0px 10px rgba(0,0,0,0.5);
+          
           cursor: pointer;
-         
+          &::before{
+            background: url('../img/icon-copy.svg') no-repeat center center;
+            background-size: cover;
+            content:'';
+            display: block;
+            height: 30px;
+            width: 30px;
+            z-index: 1;
+          }
         }
         .color-copy-label{
-          bottom: 5px;
           color: yellowgreen;
-          left: 0;
           opacity:0;
-          position: absolute;
           transition:.5s ease-in all;
           width: 100%;
-          z-index: 1;
+          
           &.active{
             opacity:1;
           }

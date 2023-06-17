@@ -38,7 +38,7 @@ colorSchemeForm.addEventListener('submit', (event) => {
     .then((response) => response.json())
     .then((data) => {
       const colors = data.colors;
-
+      console.log(data);
       generateSwatches(colors);
     })
     .catch((error) => console.log(error));
@@ -52,18 +52,18 @@ const generateSwatches = (colors) => {
     colorItem.classList.add('color-item');
     colorItem.innerHTML = `
     <div class="color-swatch" style="background-color: ${color.hex.value}">
-      <img src="${color.image.named}" alt="${color.name.value}" />
       <span class="color-copy-label">Copied!</span>
     </div>
     
     <div class="color-legend">
-      ${color.hex.value}
+    ${color.name.value}  <br/>
+    ${color.hex.value}
     </div>
   `;
-    // Add click event listener to the image to copy the color
-    const imageElement = colorItem.querySelector('img');
+    // Add click event listener to the swatch to copy the color
+    const swatchElement = colorItem.querySelector('.color-swatch');
     const colorCopyLabel = colorItem.querySelector('.color-copy-label');
-    imageElement.addEventListener('click', function (event) {
+    swatchElement.addEventListener('click', function (event) {
       event.preventDefault();
 
       // Copy the text inside the text field
