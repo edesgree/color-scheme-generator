@@ -5,6 +5,10 @@ There is the feature to copy the hexa code when clicking on it.
 
 🔗 **Live preview:** [here](https://hilarious-seahorse-4ef09e.netlify.app/)
 
+### Screenshot
+
+![screenshot](./screenshot.png)
+
 ## Built with
 
 ### Technologies

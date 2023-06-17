@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 $blue-dark:#1F2937;
 $blue-normal:#3D4B60;
 $background:#242424;
@@ -19,6 +19,10 @@ $grey:#E5E5E5;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
 }
+//mixins 
+@mixin mobile {
+  @media (max-width: 599px) { @content; }
+}
 
 a {
   color: $primary;
@@ -33,6 +37,8 @@ a {
 
 body {
   align-items: flex-start;
+  background: url('../img/bg-blob.svg') no-repeat center center;
+            background-size: cover;
   display: flex;
   margin: 0;
   min-height: 100vh;
@@ -40,8 +46,12 @@ body {
 }
 
 h1 {
+  font-family: 'Press Start 2P', cursive;
   font-size: 2.2em;
   line-height: 1.1;
+  @include mobile {
+    font-size: 1.2em;
+  }
 }
 
 #app {
@@ -53,13 +63,17 @@ h1 {
 
 
 main{
+  background-color: $blue-dark;
+  border-radius: 10px;
   #colorSchemeForm{
     align-items: center;
-    background-color: $blue-dark;
     display: flex;
     gap: 20px;
     justify-content: space-between;
     padding: 20px;
+    @include mobile {
+      flex-wrap: wrap;
+    }
     input,select,button{
       padding:15px;
     }
@@ -71,10 +85,13 @@ main{
     }
     #selectType{
     }
-    button{
+    button,input[type="submit"]{
       background:$blue-normal;
       &:hover{
         background:lighten($blue-normal,10%);
+      }
+      @include mobile {
+        width: 100%;
       }
     }
   }
@@ -83,10 +100,12 @@ main{
     grid-template-columns: repeat(5,1fr);
     margin: 0;
     padding: 0;
+    @include mobile {
+      grid-template-columns:  1fr;
+    }
     li{
       display: flex;
       flex-direction: column;
-      
       
       .color-swatch{
         display: flex;
@@ -121,7 +140,6 @@ main{
         }
       }
       .color-legend{
-        background-color: $blue-dark;
         color:white;
         flex:1;
         padding:20px 10px;

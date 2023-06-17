@@ -56,8 +56,8 @@ const generateSwatches = (colors) => {
     </div>
     
     <div class="color-legend">
-    ${color.name.value}  <br/>
-    ${color.hex.value}
+      ${color.name.value}  <br/>
+      ${color.hex.value}
     </div>
   `;
     // Add click event listener to the swatch to copy the color
